@@ -234,38 +234,40 @@
                                      <h3 class="card-title">Hasil Prediksi menggunakan Perhitungan Naive Bayes</span></h3>
                                  </div>
                                  <div class="card-body p-0">
-                                     <!-- <form id="form-prediksi"> -->
-                                     <table class="table table-bordered">
-                                         <thead>
-                                             <tr>
-                                                 <th>Nama Barang</th>
-                                                 <th>Gross</th>
-                                                 <th>Qty</th>
-                                                 <th>P(Laris | X)</th>
-                                                 <th>P(Tidak Laris | X)</th>
-                                                 <th>Prediksi</th>
-                                             </tr>
-                                         </thead>
-                                         <tbody>
-                                             <?php foreach ($predictions as $prediction): ?>
+                                     <div class="table-responsive">
+                                         <!-- <form id="form-prediksi"> -->
+                                         <table class="table table-bordered">
+                                             <thead>
                                                  <tr>
-                                                     <td><?php echo $prediction['nama']; ?></td>
-                                                     <td><?php echo $prediction['gross']; ?></td>
-                                                     <td><?php echo $prediction['qty']; ?></td>
-                                                     <td><?php echo number_format($prediction['prob_laris_given_x'], 8); ?></td>
-                                                     <td><?php echo number_format($prediction['prob_tidak_laris_given_x'], 8); ?></td>
-                                                     <td>
-                                                         <!-- Tambahkan badge sesuai dengan prediksi -->
-                                                         <?php if ($prediction['prediksi'] == 'Laris'): ?>
-                                                             <span class="badge bg-success">Laris</span>
-                                                         <?php else: ?>
-                                                             <span class="badge bg-danger">Tidak Laris</span>
-                                                         <?php endif; ?>
-                                                     </td>
+                                                     <th>Nama Barang</th>
+                                                     <th>Gross</th>
+                                                     <th>Qty</th>
+                                                     <th>P(Laris | X)</th>
+                                                     <th>P(Tidak Laris | X)</th>
+                                                     <th>Prediksi</th>
                                                  </tr>
-                                             <?php endforeach; ?>
-                                         </tbody>
-                                     </table>
+                                             </thead>
+                                             <tbody>
+                                                 <?php foreach ($predictions as $prediction): ?>
+                                                     <tr>
+                                                         <td><?php echo $prediction['nama']; ?></td>
+                                                         <td><?php echo $prediction['gross']; ?></td>
+                                                         <td><?php echo $prediction['qty']; ?></td>
+                                                         <td><?php echo number_format($prediction['prob_laris_given_x'], 8); ?></td>
+                                                         <td><?php echo number_format($prediction['prob_tidak_laris_given_x'], 8); ?></td>
+                                                         <td>
+                                                             <!-- Tambahkan badge sesuai dengan prediksi -->
+                                                             <?php if ($prediction['prediksi'] == 'Laris'): ?>
+                                                                 <span class="badge bg-success">Laris</span>
+                                                             <?php else: ?>
+                                                                 <span class="badge bg-danger">Tidak Laris</span>
+                                                             <?php endif; ?>
+                                                         </td>
+                                                     </tr>
+                                                 <?php endforeach; ?>
+                                             </tbody>
+                                         </table>
+                                     </div>
                                  </div>
                              </div>
 

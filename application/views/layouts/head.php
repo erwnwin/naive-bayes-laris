@@ -9,6 +9,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/plugins/toastr/toastr.min.css">
@@ -89,7 +90,7 @@
         }
 
         .card-dangerku {
-            background-color:rgb(186, 89, 89);
+            background-color: rgb(186, 89, 89);
             color: rgb(0, 0, 0);
             border: none;
         }
@@ -184,9 +185,51 @@
             color: #064936;
             /* Change to match the border or text color */
         }
+
+
+        /* Gaya untuk background lebih gelap dan opasitas */
+        .small-box.bg-info {
+            background-color: rgb(24, 120, 135) !important;
+            /* Warna biru dengan opasitas */
+            color: #fff;
+            /* Teks berwarna putih */
+        }
+
+        .small-box.bg-success {
+            background-color: rgb(2, 142, 98) !important;
+            /* Warna hijau dengan opasitas */
+            color: #fff;
+            /* Teks berwarna putih */
+        }
+
+        .small-box.bg-primary {
+            background-color: rgb(183, 71, 47) !important;
+            /* Warna hijau dengan opasitas */
+            color: #fff;
+            /* Teks berwarna putih */
+        }
+
+        /* Gaya untuk footer box */
+        .small-box-footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Gelap dengan sedikit transparansi */
+            color: #fff;
+            /* Teks putih */
+        }
+
+        /* Gaya ikon */
+        .small-box .icon {
+            color: #fff;
+            /* Ikon dengan warna putih */
+        }
+
+        /* Sesuaikan teks di dalam kotak */
+        .small-box .inner h3 {
+            font-weight: bold;
+        }
     </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
     <!-- Site wrapper -->
     <div class="wrapper">

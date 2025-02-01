@@ -31,6 +31,9 @@
 <script src="<?= base_url() ?>public/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?= base_url() ?>public/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= base_url() ?>public/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
     $(function() {
         $("#example1").DataTable({
@@ -114,6 +117,41 @@
         });
     });
 </script>
+
+
+<script>
+    var ctx = document.getElementById('larisChart').getContext('2d');
+    var larisChart = new Chart(ctx, {
+        type: 'pie', // Tipe chart: pie atau bar
+        data: {
+            labels: ['Laris', 'Tidak Laris'], // Label untuk chart
+            datasets: [{
+                label: 'Jumlah Barang',
+                data: [<?= $total_prediksi_laris; ?>, <?= $total_prediksi_tidak_laris; ?>], // Data dari controller
+                backgroundColor: ['#17a2b8', '#28a745'], // Warna untuk Laris dan Tidak Laris
+                borderColor: ['#ffffff', '#ffffff'], // Warna border
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, // Membuat chart responsif
+            maintainAspectRatio: false, // Menonaktifkan rasio aspek tetap
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw;
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+
 
 
 </body>
