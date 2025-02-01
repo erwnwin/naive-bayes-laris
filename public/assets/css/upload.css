@@ -1,0 +1,23 @@
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.preview-item {
+    position: relative;
+    margin: 5px;
+}
+.preview-item img {
+    max-width: 100px;
+    display: block;
+}
+.remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}

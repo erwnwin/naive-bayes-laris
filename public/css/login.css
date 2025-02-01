@@ -1,0 +1,279 @@
+html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .login-container {
+            display: flex;
+            height: 100vh;
+            background-color: #f4f6f9;
+        }
+
+        .svg-container {
+            flex: 1;
+            background: #0b4d6b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svg-container svg {
+            position: absolute;
+        }
+
+        .svg1 {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            right: 75%;
+            animation: move1 10s linear infinite;
+        }
+
+        .svg2 {
+            width: 50%;
+            height: 60%;
+            top: 20%;
+            left: 80%;
+            animation: move2 15s linear infinite;
+        }
+
+        .svg3 {
+            width: 40%;
+            height: 40%;
+            top: 60%;
+            left: -10%;
+            position: absolute;
+            transform: rotate(20deg);
+            animation: move3 10s linear infinite;
+        }
+
+        .svg4 {
+            width: 45%;
+            height: 45%;
+            top: 10%;
+            left: 1%;
+            animation: move4 8s linear infinite;
+        }
+
+        .svg5 {
+            width: 50%;
+            height: 50%;
+            top: 76%;
+            left: 65%;
+            animation: move5 19s linear infinite;
+        }
+
+        .svg6 {
+            width: 50%;
+            height: 50%;
+            top: 1%;
+            left: 76%;
+            animation: move6 19s linear infinite;
+        }
+
+        .svg7 {
+            width: 40%;
+            height: 40%;
+            top: 85%;
+            left: 40%;
+            position: absolute;
+            transform: rotate(110deg);
+            animation: move7 15s linear infinite;
+        }
+
+        @keyframes move1 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(20px) translateY(30px);
+            }
+        }
+
+        @keyframes move2 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(50px) translateY(-40px);
+            }
+        }
+
+        @keyframes move3 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0) rotate(20deg);
+            }
+
+            50% {
+                transform: translateX(30px) translateY(0px) rotate(20deg);
+            }
+        }
+
+        @keyframes move4 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(20px) translateY(0);
+            }
+        }
+
+        @keyframes move5 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(40px) translateY(10px);
+            }
+        }
+
+        @keyframes move6 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(20px) translateY(40px);
+            }
+        }
+
+        @keyframes move7 {
+
+            0%,
+            100% {
+                transform: translateX(0) translateY(0) rotate(180deg);
+            }
+
+            50% {
+                transform: translateX(20px) translateY(0px)rotate(180deg);
+            }
+        }
+
+        .login-form-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .login-form .lead {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0d4764;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group-text {
+            background-color: #3c6e87;
+            border: none;
+            color: white;
+        }
+
+        .login-form .lupa-password {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .form-control {
+            border-left: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-control::placeholder {
+            color: #1e7ba9;
+        }
+
+        .btn-default {
+            background-color: #0d4764;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            padding: 8px 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-default:hover {
+            background-color: #2e83ad;
+            color: white;
+        }
+
+        .custom-control-label {
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group-text {
+            background-color: transparent;
+            border: 1px solid #ced4da;
+            color: #495057;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+        }
+
+        .form-control {
+            border-left: none;
+            border-radius: 4px;
+            border-color: #ced4da;
+        }
+
+        .form-control:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0d4764;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .svg-container {
+                display: none;
+            }
+
+            .login-form-container {
+                flex: 1;
+                width: 100%;
+            }
+        }

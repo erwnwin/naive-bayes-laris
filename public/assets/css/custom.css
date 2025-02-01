@@ -1,0 +1,232 @@
+/* 1. Mengubah warna latar belakang sidebar */
+.main-sidebar {
+    background-color: #0d4f6f; /* Background color for sidebar */
+}
+
+/* 2. Mengubah warna link di sidebar */
+.nav-sidebar .nav-link {
+    color: #ffffff; /* White text color for sidebar links */
+}
+
+/* 3. Mengubah warna saat hover pada link sidebar */
+.nav-sidebar .nav-link:hover {
+    background-color: #0d5376; /* Background color on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+
+/* 2. Mengubah warna teks submenu */
+.nav-treeview .nav-link {
+    color: #ffffff !important; /* Warna teks baru untuk submenu */
+}
+
+/* 3. Mengubah warna latar belakang saat hover pada submenu */
+.nav-treeview .nav-link:hover {
+    background-color: #014263 !important; /* Warna latar belakang saat hover pada submenu */
+    color: #ffffff !important; /* Warna teks saat hover pada submenu */
+}
+
+
+/* 4. Mengubah warna latar belakang item menu aktif */
+.nav-sidebar .nav-item .nav-link.active {
+    background-color: #0988aa !important; /* Warna latar belakang baru untuk item menu aktif */
+    color: #ffffff !important; /* Warna teks baru untuk item menu aktif */
+}
+
+/* 5. Mengubah warna latar belakang saat hover pada item menu aktif */
+.nav-sidebar .nav-item .nav-link.active:hover {
+    background-color: #0988aa !important; /* Warna latar belakang saat hover pada item menu aktif */
+    color: #ffffff !important; /* Warna teks saat hover pada item menu aktif */
+}
+
+
+.nav-sidebar .nav-treeview .nav-item .nav-link.active {
+    background-color: #60b9d1 !important; /* Warna latar belakang baru untuk item menu aktif */
+    color: #ffffff !important; /* Warna teks baru untuk item menu aktif */
+}
+
+
+/* 6. Mengubah warna tombol utama */
+.btn-primaryku {
+    background-color: #0d4764; /* Green background */
+    border-color: #0d4764; /* Green border */
+    color: #ffffff !important; /* Warna teks saat hover pada item menu aktif */
+
+}
+
+/* 7. Mengubah warna tombol utama saat hover */
+.btn-primaryku:hover {
+    background-color: #2e83ad; /* Darker green on hover */
+    border-color: #0f5c83; /* Darker green border on hover */
+    color: #000000 !important; /* Warna teks saat hover pada item menu aktif */
+}
+
+/* 8. Mengubah ukuran font di sidebar */
+.nav-sidebar .nav-link {
+    font-size: 1.0rem; /* Increase font size */
+}
+
+/* 9. Mengubah font utama di seluruh halaman */
+body {
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    
+  
+}
+
+
+/* 12. Mengubah warna latar belakang konten utama */
+.content {
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* 13. Mengubah warna teks di konten utama */
+.content-wrapper .content {
+    color: #212529; /* Dark text color */
+}
+
+/* Container utama agar flexbox dapat mengatur posisi footer */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Setidaknya setinggi viewport */
+}
+
+/* Konten utama untuk mengisi ruang yang tersedia */
+.content-wrapper {
+    flex: 1; /* Membuat konten utama mengisi ruang yang tersedia */
+}
+
+/* 14. Mengubah border kartu */
+.card {
+    border: 1px solid #dee2e6; /* Light grey border */
+}
+
+
+/* 1. Menghapus garis bawah dari brand-link */
+.brand-link {
+    border: none !important; /* Menghapus border jika ada */
+    box-shadow: none !important; /* Menghapus shadow jika ada */
+    text-decoration: none !important; /* Menghapus underline jika ada */
+}
+
+/* Menghapus garis bawah pada nama pengguna */
+.user-panel .info a {
+    text-decoration: none !important; /* Menghapus underline dari link */
+    color: #ffffff !important; /* Menetapkan warna teks */
+}
+
+/* 1. Menghilangkan border dan box-shadow pada footer */
+.main-footer {
+    border: none; /* Menghapus border */
+    box-shadow: none; /* Menghapus box-shadow */
+}
+
+/* Styling untuk footer */
+.main-footer {
+    border: none; /* Menghapus border */
+    box-shadow: none; /* Menghapus box-shadow */
+    padding: 10px; /* Mengurangi padding footer */
+    font-size: 0.8rem; /* Mengurangi ukuran font footer */
+    background-color: #f8f9fa; /* Warna latar belakang footer, sesuaikan sesuai kebutuhan */
+}
+
+/* 3. Mengatur styling untuk elemen di dalam footer */
+.main-footer .float-right {
+    font-size: 0.8rem; /* Mengurangi ukuran font */
+}
+
+.main-footer strong {
+    font-size: 0.8rem; /* Mengurangi ukuran font untuk teks copyright */
+}
+
+/* 4. Mengatur ukuran font dan link */
+.main-footer a {
+    color: #0988aa; /* Warna link */
+}
+
+.main-footer a:hover {
+    color: #0988aa; /* Warna link saat hover */
+}
+
+/* 1. Menghilangkan border pada navbar */
+.main-header.navbar {
+    border: none; /* Menghapus border navbar */
+    box-shadow: none; /* Menghapus shadow jika ada */
+}
+
+/* 2. Menghilangkan garis bawah pada link di navbar */
+.navbar-nav .nav-link {
+    border-bottom: none; /* Menghapus garis bawah pada link */
+}
+
+/* 4. Mengatur styling dropdown */
+.dropdown-menu {
+    border: none; /* Menghapus border pada dropdown */
+    box-shadow: none; /* Menghapus shadow pada dropdown */
+}
+
+/* Ganti .bg-custom dengan kelas khusus jika Anda memiliki satu */
+.callout-custom {
+    background-color: #07708d; /* Ganti dengan warna latar belakang sidebar Anda */
+    color: #ffffff; /* Pastikan teks terlihat dengan baik di atas latar belakang yang gelap */
+}
+
+.callout-custom h5 {
+    color: #ffffff; /* Warna teks untuk judul */
+}
+
+.callout-custom p {
+    color: #ffffff; /* Warna teks untuk konten */
+}
+
+.callout-custom hr {
+    border-top: 1px solid #ffffff; /* Warna garis pemisah */
+}
+
+/* Menyesuaikan ukuran, warna, dan jarak SVG */
+.nav-link svg {
+    width: 16px;  /* Ukuran lebar SVG */
+    height: 16px; /* Ukuran tinggi SVG */
+    fill: #ffffff; /* Warna ikon SVG */
+    vertical-align: middle; /* Menyelaraskan ikon dengan teks */
+    margin-right: 6px; /* Jarak antara ikon dan teks */
+    margin-left: 4px;
+}
+
+.nav-link p {
+    margin: 0; /* Menghapus margin default */
+}
+
+/* Menyelaraskan ikon dengan teks */
+.nav-item .nav-link {
+    display: flex; /* Mengatur flex untuk menyelaraskan item */
+    align-items: center; /* Menyelaraskan item di tengah */
+}
+
+
+/* Menyesuaikan warna ikon SVG untuk item aktif */
+.nav-link.active svg {
+    fill: #0988aa; /* Warna ikon saat item aktif */
+}
+
+.preview-image {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.remove-image {
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
