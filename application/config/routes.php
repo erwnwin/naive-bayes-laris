@@ -66,6 +66,7 @@ $route['data-set/sample'] = 'admin/DataSetController/download_sample';
 $route['probabilitas'] = 'admin/ProbabilitasController';
 $route['perhitungan'] = 'admin/PerhitunganController';
 $route['perhitungan/prediksi'] = 'admin/PerhitunganController/prediksi';
+$route['perhitungan/export'] = 'admin/PerhitunganController/export_pdf';
 $route['perhitungan/predict_by_date'] = 'admin/PerhitunganController/predict_by_date_new';
 
 $route['prediksi-minat'] = 'admin/PrediksiMinatController';
@@ -75,6 +76,7 @@ $route['klasifikasi/filter'] = 'admin/KlasifikasiController/filter_by_date_ajax'
 $route['klasifikasi/export_to_excel'] = 'admin/KlasifikasiController/export_to_excel';
 
 $route['riwayat-hasil'] = 'admin/HasilController';
+$route['riwayat-hasil/export'] = 'admin/PerhitunganController/export_pdf';
 $route['pengguna'] = 'admin/PenggunaController';
 $route['profil'] = 'admin/ProfilController';
 

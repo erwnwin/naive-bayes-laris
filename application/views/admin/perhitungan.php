@@ -226,12 +226,13 @@
                      </div>
 
                      <div class="row">
-
-
                          <div class="col-lg-12 col-12">
                              <div class="card card-successku">
                                  <div class="card-header">
                                      <h3 class="card-title">Hasil Prediksi menggunakan Perhitungan Naive Bayes</span></h3>
+                                     <div class="card-tools">
+                                         <a href="<?= base_url('perhitungan/export') ?>" class="btn btn-sm btn-primaryku text-white pull-right" target="_blank">Export PDF</a>
+                                     </div>
                                  </div>
                                  <div class="card-body p-0">
                                      <div class="table-responsive">
