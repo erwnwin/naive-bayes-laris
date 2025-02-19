@@ -76,6 +76,7 @@ $route['klasifikasi/filter'] = 'admin/KlasifikasiController/filter_by_date_ajax'
 $route['klasifikasi/export_to_excel'] = 'admin/KlasifikasiController/export_to_excel';
 
 $route['riwayat-hasil'] = 'admin/HasilController';
+$route['result'] = 'admin/HasilController';
 $route['riwayat-hasil/export'] = 'admin/PerhitunganController/export_pdf';
 $route['pengguna'] = 'admin/PenggunaController';
 $route['profil'] = 'admin/ProfilController';

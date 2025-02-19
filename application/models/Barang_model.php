@@ -19,7 +19,7 @@ class Barang_model extends CI_Model
     }
 
 
-public function get_barang()
+    public function get_barang()
     {
         // Ambil semua data barang tanpa filter
         $this->db->select('*');
@@ -79,5 +79,22 @@ public function get_barang()
     {
         $this->db->where('id', $id);
         $this->db->delete('barang');  // Hapus data berdasarkan ID
+    }
+
+
+    public function get_historis_qty($nama_barang)
+    {
+        // Query untuk mengambil data historis qty berdasarkan nama barang
+        $this->db->select('qty');
+        $this->db->from('barang'); // Ganti 'penjualan' dengan nama tabel yang sesuai
+        $this->db->where('nama_barang', $nama_barang);
+        $query = $this->db->get();
+
+        // Jika data ditemukan, kembalikan array qty
+        if ($query->num_rows() > 0) {
+            return array_column($query->result_array(), 'qty');
+        } else {
+            return []; // Kembalikan array kosong jika data tidak ditemukan
+        }
     }
 }

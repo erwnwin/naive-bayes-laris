@@ -34,7 +34,7 @@ class DataSetController extends CI_Controller
 
         // Query the database to get the filtered and aggregated data
         // $this->db->select('nama_barang, nama_brand, harga_brand, ukuran, SUM(qty) as total_qty, SUM(total_harga) as total_harga');
-        $this->db->select('id, nama_barang, gross, qty, label');
+        $this->db->select('id, nama_barang, qty, value, gross, disc, subtotal, cons, netto, label');
         $this->db->from('barang');
         // $this->db->where('MONTH(tanggal)', $bulan);
         // $this->db->where('YEAR(tanggal)', $tahun);
@@ -119,68 +119,7 @@ class DataSetController extends CI_Controller
     }
 
 
-    private function process_fileku($filePath, $file_ext)
-    {
-        // Create the reader based on file type
-        $reader = ReaderEntityFactory::createReaderFromFile($filePath);
-        $reader->open($filePath);
 
-        foreach ($reader->getSheetIterator() as $sheet) {
-            foreach ($sheet->getRowIterator() as $rowIndex => $row) {
-                if ($rowIndex == 1) continue;  // Skip header row
-
-                $cells = $row->getCells();
-
-                // Ambil nilai tanggal (kolom ke-7)
-                $date_value = $cells[6]->getValue();
-
-                $tanggal = null; // Default value for date
-
-                // Cek jika $date_value adalah objek DateTime
-                if ($date_value instanceof DateTime) {
-                    // Jika objek DateTime, format menjadi Y-m-d
-                    $tanggal = $date_value->format('Y-m-d');
-                } else {
-                    // Jika bukan objek DateTime, anggap sebagai string
-                    // Pastikan tanggal dalam format d/m/Y
-                    $date_value = (string)$date_value;
-
-                    // Tangani format tanggal
-                    if (is_numeric($date_value)) {
-                        // Jika tanggal berupa serial number (Excel format)
-                        $unix_date = ($date_value - 25569) * 86400; // Convert Excel serial date to Unix timestamp
-                        $tanggal = date('Y-m-d', $unix_date);
-                    } else {
-                        // Jika tanggal dalam format d/m/Y (string)
-                        $tanggal_obj = DateTime::createFromFormat('d/m/Y', $date_value);
-                        $tanggal = $tanggal_obj ? $tanggal_obj->format('Y-m-d') : null;
-                    }
-                }
-
-                // Jika format tanggal tidak valid, log error dan skip row ini
-                if (!$tanggal) {
-                    log_message('error', "Invalid date format at row $rowIndex: " . json_encode($date_value));
-                    continue;
-                }
-
-                // Data untuk disimpan ke database
-                $data = [
-                    'kode_produk' => $cells[0]->getValue(),
-                    'nama_brand' => $cells[1]->getValue(),
-                    'harga_brand' => $cells[2]->getValue(),
-                    'ukuran' => $cells[3]->getValue(),
-                    'qty' => $cells[4]->getValue(),
-                    'total_harga' => $cells[5]->getValue(),
-                    'tanggal' => $tanggal
-                ];
-
-                // Simpan data ke database
-                $this->db->insert('tbl_penjualan_detail', $data);
-            }
-        }
-
-        $reader->close();
-    }
 
 
 
@@ -191,8 +130,7 @@ class DataSetController extends CI_Controller
         $reader->open($filePath);
 
         // Tentukan batasan untuk label otomatis berdasarkan gross dan qty
-        $gross_min_laris = 15000000; // Batasan gross untuk laris
-        $qty_min_laris = 70;  // Batasan qty untuk laris
+        $qty_min_laris = 300;  // Batasan qty untuk laris
 
         foreach ($reader->getSheetIterator() as $sheet) {
             foreach ($sheet->getRowIterator() as $rowIndex => $row) {
@@ -203,19 +141,29 @@ class DataSetController extends CI_Controller
                 // Ambil nilai nama_barang, qty, dan gross dari kolom yang sesuai
                 $nama_barang = $cells[1]->getValue();  // Nama Barang ada di CELL B2 (kolom 1)
                 $qty = $cells[2]->getValue();  // Qty ada di CELL C2 (kolom 2)
-                $gross = $cells[3]->getValue();  // Gross ada di CELL D2 (kolom 3)
+                $value = $cells[3]->getValue();  // Gross ada di CELL D2 (kolom 3)
+                $gross = $cells[4]->getValue();  // Gross ada di CELL E2 (kolom 3)
+                $disc = $cells[5]->getValue();  // Gross ada di CELL F2 (kolom 3)
+                $subtotal = $cells[6]->getValue();  // Gross ada di CELL G2 (kolom 3)
+                $cons = $cells[7]->getValue();  // Gross ada di CELL H2 (kolom 3)
+                $netto = $cells[8]->getValue();  // Gross ada di CELL I2 (kolom 3)
 
                 // Tentukan label otomatis berdasarkan aturan
                 $label = 'Tidak Laris'; // Default value
-                if ($gross >= $gross_min_laris && $qty >= $qty_min_laris) {
+                if ($qty >= $qty_min_laris) {
                     $label = 'Laris';
                 }
 
                 // Data untuk disimpan ke database
                 $data = [
                     'nama_barang' => $nama_barang,  // Nama Barang
-                    'gross' => $gross,              // Gross
                     'qty' => $qty,                  // Qty
+                    'value' => $value,                  // Qty
+                    'gross' => $gross,              // Gross
+                    'disc' => $disc,                  // Qty
+                    'subtotal' => $subtotal,                  // Qty
+                    'cons' => $cons,                  // Qty
+                    'netto' => $netto,                  // Qty
                     'label' => $label               // Label yang sudah ditentukan
                 ];
 

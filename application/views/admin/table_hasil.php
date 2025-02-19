@@ -20,7 +20,8 @@
 
                      <div class="row">
                          <div class="col-lg-12 col-12">
-                             <div class="card card-successku">
+                             <!-- <div class="card card-successku"> -->
+                             <div class="card card-default">
                                  <div class="card-header">
                                      <h3 class="card-title">Hasil Prediksi menggunakan Perhitungan Naive Bayes</span></h3>
                                      <div class="card-tools">

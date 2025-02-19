@@ -35,6 +35,18 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+    $(document).ready(function() {
+        // Event listener untuk button "Tambahkan"
+        $('.btn-tampilkan-rekomendasi').click(function() {
+            // Ambil nama barang dari atribut data-nama
+            var namaBarang = $(this).data('nama');
+            // Tampilkan rekomendasi qty
+            $('#rekomendasi-' + namaBarang).toggle();
+        });
+    });
+</script>
+
+<script>
     $(function() {
         $("#example1").DataTable({
             "responsive": true,

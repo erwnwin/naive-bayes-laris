@@ -18,10 +18,10 @@
                      <div class="alert custom-alert-danger alert-dismissible">
                          <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
                          <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
-                         Data set berikut adalah data yang diberikan oleh Pihak Issue Shop adalah data rekap untuk <strong>Bulan Maret 2024</strong>!
+                         Data set berikut adalah data yang diberikan oleh Pihak Issue Shop adalah data rekap untuk <strong>Bulan Desember 2024</strong>!
                          <br>
                          <br>*<u>Note:</u> Hanya data terlampir yang diberikan oleh Issue Shop. Terima Kasih! <br>
-                         <a href="<?= base_url('public/storage/report payment brand maret 2024 issue bougenville.pdf') ?>" target="_blank" style="text-decoration: none; margin-top:20px;" class="btn btn-sm btn-success">Lihat Temuan Data</a>
+                         <a href="<?= base_url('public/storage/data tri payment desember 2024 issue 1 bougenville.pdf') ?>" target="_blank" style="text-decoration: none; margin-top:20px;" class="btn btn-sm btn-success">Lihat Temuan Data</a>
                      </div>
 
                      <div class="card card-default">
@@ -84,8 +84,13 @@
                                                  <th><input type="checkbox" id="select_all"></th>
                                                  <th>#</th>
                                                  <th>Nama Brand</th>
-                                                 <th>Gross</th>
                                                  <th>Qty</th>
+                                                 <th>Value</th>
+                                                 <th>Gross</th>
+                                                 <th>Disc</th>
+                                                 <th>Subtotal</th>
+                                                 <th>Cons</th>
+                                                 <th>Netto</th>
                                                  <!-- <th>Label</th> -->
                                                  <th>Action</th> <!-- Kolom Action untuk Hapus -->
                                              </tr>
@@ -98,8 +103,13 @@
                                                          <td><input type="checkbox" class="row_check" data-id="<?= $row->id; ?>"></td>
                                                          <td><?= $no++; ?></td>
                                                          <td><?= htmlspecialchars($row->nama_barang); ?></td>
-                                                         <td><?= htmlspecialchars($row->gross); ?></td>
                                                          <td><?= htmlspecialchars($row->qty); ?></td>
+                                                         <td><?= htmlspecialchars($row->value); ?></td>
+                                                         <td><?= htmlspecialchars($row->gross); ?></td>
+                                                         <td><?= htmlspecialchars($row->disc); ?></td>
+                                                         <td><?= htmlspecialchars($row->subtotal); ?></td>
+                                                         <td><?= htmlspecialchars($row->cons); ?></td>
+                                                         <td><?= htmlspecialchars($row->netto); ?></td>
                                                          <!-- <td>
                                                              <?php if ($row->label == 'Laris'): ?>
                                                                  <span class="badge bg-success"><?= $row->label; ?></span>

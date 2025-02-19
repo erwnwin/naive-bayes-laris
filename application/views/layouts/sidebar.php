@@ -107,6 +107,15 @@
                          </a>
                      </li>
 
+                     <!-- <li class="nav-item">
+                         <a href="<?= base_url('result') ?>" class="nav-link <?= $this->uri->segment(1) == 'result' ? 'active' : '' ?>">
+                             <i class="nav-icon fas fa-poll"></i>
+                             <p>
+                                 Hasil Prediksi
+                             </p>
+                         </a>
+                     </li> -->
+
 
                      <!-- <li class="nav-item">
                      <a href="<?= base_url('riwayat-hasil') ?>" class="nav-link <?= $this->uri->segment(1) == 'riwayat-hasil' ? 'active' : '' ?>">

@@ -15,15 +15,62 @@
         <div class="container-fluid">
 
 
-            <div class="alert custom-alert-danger alert-dismissible">
-                <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
-                <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
-                Klasifikasi / Label (Laris || Tidak Laris) didapatkan dari :
-                <ul>
-                    <li><b>Qty</b> = </li>
-                    <li><b>Gross</b> = </li>
-                </ul>
-                Data klasifikasi ini didapatkan dari data set yang telah diimport sebelumnya
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="alert custom-alert-danger alert-dismissible">
+                        <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                        <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
+                        Klasifikasi / Label (Laris || Tidak Laris) didapatkan dari :
+                        <ul>
+                            <li><b>Qty</b> = 500</li>
+                            <!-- <li><b>Gross</b> = </li> -->
+                        </ul>
+                        Data klasifikasi ini didapatkan dari data set yang telah diimport sebelumnya
+
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="alert custom-alert-success alert-dismissible">
+                        <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                        <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
+
+                        #Terdapat 7 Fitur yang akan digunakan yakni:
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p>1. Qty <br>
+                                    2. Value <br>
+
+
+
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>
+                                    3. Gross <br>
+                                    4. Disc <br>
+
+
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>
+                                    5. SubTotal <br>
+                                    6. Cons <br>
+
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>
+
+                                    7. Netto <br>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
 
@@ -92,8 +139,13 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nama Barang</th>
-                                    <th>Gross</th>
                                     <th>Qty</th>
+                                    <th>Value</th>
+                                    <th>Gross</th>
+                                    <th>Disc</th>
+                                    <th>Sub Total</th>
+                                    <th>Cons</th>
+                                    <th>Netto</th>
                                     <th>Label</th>
                                 </tr>
                             </thead>
@@ -104,8 +156,13 @@
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= htmlspecialchars($row->nama_barang); ?></td>
-                                            <td><?= htmlspecialchars($row->gross); ?></td>
                                             <td><?= htmlspecialchars($row->qty); ?></td>
+                                            <td><?= htmlspecialchars($row->value); ?></td>
+                                            <td><?= htmlspecialchars($row->gross); ?></td>
+                                            <td><?= htmlspecialchars($row->disc); ?></td>
+                                            <td><?= htmlspecialchars($row->subtotal); ?></td>
+                                            <td><?= htmlspecialchars($row->cons); ?></td>
+                                            <td><?= htmlspecialchars($row->netto); ?></td>
                                             <td>
                                                 <?php if ($row->label == 'Laris'): ?>
                                                     <span class="badge bg-success"><?= $row->label; ?></span>

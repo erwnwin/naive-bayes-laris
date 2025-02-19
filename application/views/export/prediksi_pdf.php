@@ -46,7 +46,13 @@
                 <th>Nama Barang</th>
                 <th>Gross</th>
                 <th>Qty</th>
+                <th>Value</th>
+                <th>Disc</th>
+                <th>Subtotal</th>
+                <th>Cons</th>
+                <th>Netto</th>
                 <th>Probabilitas Laris</th>
+                <th>Rekomendasi Qty</th>
             </tr>
         </thead>
         <tbody>
@@ -56,14 +62,20 @@
                     <tr>
                         <td><?= $rank++ ?></td>
                         <td><?= $item['nama'] ?></td>
-                        <td><?= "Rp " . number_format($item['gross'], 0, ',', '.') ?></td> <!-- Format Rp -->
+                        <td><?= "Rp " . number_format($item['gross'], 0, ',', '.') ?></td>
                         <td><?= $item['qty'] ?></td>
+                        <td><?= "Rp " . number_format($item['value'], 0, ',', '.') ?></td>
+                        <td><?= "Rp " . number_format($item['disc'], 0, ',', '.') ?></td>
+                        <td><?= "Rp " . number_format($item['subtotal'], 0, ',', '.') ?></td>
+                        <td><?= "Rp " . number_format($item['cons'], 0, ',', '.') ?></td>
+                        <td><?= "Rp " . number_format($item['netto'], 0, ',', '.') ?></td>
                         <td><?= number_format($item['prob_laris_given_x'], 5) ?></td>
+                        <td><?= $item['qty'] * 1.1 ?></td> <!-- Contoh rekomendasi qty (10% lebih banyak) -->
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="5" class="text-center">Tidak ada data prediksi laris.</td>
+                    <td colspan="11" class="text-center">Tidak ada data prediksi laris.</td>
                 </tr>
             <?php endif; ?>
         </tbody>
