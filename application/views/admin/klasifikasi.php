@@ -16,22 +16,27 @@
 
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <div class="alert custom-alert-danger alert-dismissible">
                         <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
                         <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
-                        Klasifikasi / Label (Laris || Tidak Laris) didapatkan dari :
-                        <ul>
-                            <li><b>Qty</b> = 500</li>
-                            <!-- <li><b>Gross</b> = </li> -->
-                        </ul>
-                        Data klasifikasi ini didapatkan dari data set yang telah diimport sebelumnya
+                        <p>Klasifikasi / Label (Laris || Tidak Laris) didapatkan dari:</p>
 
+                        <!-- Ganti <ul> dengan <div> dan tambahkan gambar -->
+                        <div class="classification-info">
+                            <div class="criteria">
+                                <ol style="font-weight: bold;">
+                                    <li>Qty >= 250</li>
+
+                                </ol>
+                            </div>
+                        </div>
+                        <p>Data klasifikasi ini didapatkan dari data set yang telah diimport sebelumnya.</p>
                     </div>
 
 
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <div class="alert custom-alert-success alert-dismissible">
                         <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
                         <h5><i class="icon far fa-question-circle"></i>Mohon Diperhatikan!</h5>
@@ -41,30 +46,24 @@
                             <div class="col-sm-3">
                                 <p>1. Qty <br>
                                     2. Value <br>
-
-
-
                                 </p>
                             </div>
                             <div class="col-sm-3">
                                 <p>
                                     3. Gross <br>
                                     4. Disc <br>
-
-
                                 </p>
                             </div>
                             <div class="col-sm-3">
                                 <p>
                                     5. SubTotal <br>
                                     6. Cons <br>
-
                                 </p>
                             </div>
                             <div class="col-sm-3">
                                 <p>
-
                                     7. Netto <br>
+                                    8. Periode <br>
                                 </p>
                             </div>
                         </div>

@@ -21,7 +21,7 @@
                          Data set berikut adalah data yang diberikan oleh Pihak Issue Shop adalah data rekap untuk <strong>Bulan Desember 2024</strong>!
                          <br>
                          <br>*<u>Note:</u> Hanya data terlampir yang diberikan oleh Issue Shop. Terima Kasih! <br>
-                         <a href="<?= base_url('public/storage/data tri payment desember 2024 issue 1 bougenville.pdf') ?>" target="_blank" style="text-decoration: none; margin-top:20px;" class="btn btn-sm btn-success">Lihat Temuan Data</a>
+                         <a href="<?= base_url('public/storage/report payment des 2024 - jan 2025 issue shop.pdf') ?>" target="_blank" style="text-decoration: none; margin-top:20px;" class="btn btn-sm btn-success">Lihat Temuan Data</a>
                      </div>
 
                      <div class="card card-default">

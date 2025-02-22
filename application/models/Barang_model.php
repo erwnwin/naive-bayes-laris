@@ -18,6 +18,26 @@ class Barang_model extends CI_Model
         return $query->result_array(); // Mengembalikan hasil sebagai array
     }
 
+    public function get_barang_by_periode($periode)
+    {
+        // Query untuk mengambil data barang berdasarkan periode
+        $this->db->where('periode', $periode);
+        $query = $this->db->get('barang'); // Ganti 'barang' dengan nama tabel yang sesuai
+
+        return $query->result_array();
+    }
+
+
+    public function get_all_periodes()
+    {
+        // Query untuk mengambil semua periode unik
+        $this->db->select('periode');
+        $this->db->distinct(); // Ambil nilai unik
+        $this->db->order_by('periode', 'ASC'); // Urutkan berdasarkan periode
+        $query = $this->db->get('barang'); // Ganti 'barang' dengan nama tabel yang sesuai
+
+        return $query->result_array();
+    }
 
     public function get_barang()
     {

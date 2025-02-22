@@ -120,9 +120,6 @@ class DataSetController extends CI_Controller
 
 
 
-
-
-
     private function process_file($filePath, $file_ext)
     {
         // Create the reader based on file type
@@ -139,32 +136,39 @@ class DataSetController extends CI_Controller
                 $cells = $row->getCells();
 
                 // Ambil nilai nama_barang, qty, dan gross dari kolom yang sesuai
-                $nama_barang = $cells[1]->getValue();  // Nama Barang ada di CELL B2 (kolom 1)
-                $qty = $cells[2]->getValue();  // Qty ada di CELL C2 (kolom 2)
-                $value = $cells[3]->getValue();  // Gross ada di CELL D2 (kolom 3)
-                $gross = $cells[4]->getValue();  // Gross ada di CELL E2 (kolom 3)
-                $disc = $cells[5]->getValue();  // Gross ada di CELL F2 (kolom 3)
-                $subtotal = $cells[6]->getValue();  // Gross ada di CELL G2 (kolom 3)
-                $cons = $cells[7]->getValue();  // Gross ada di CELL H2 (kolom 3)
-                $netto = $cells[8]->getValue();  // Gross ada di CELL I2 (kolom 3)
+                $nama_barang = $cells[1]->getValue();
+                $qty = $cells[2]->getValue();
+                $value = $cells[3]->getValue();
+                $gross = $cells[4]->getValue();
+                $disc = $cells[5]->getValue();
+                $subtotal = $cells[6]->getValue();
+                $cons = $cells[7]->getValue();
+                $netto = $cells[8]->getValue();
+                $periode = $cells[9]->getValue();
+
+                // **Perbaikan Konversi DateTime**
+                if ($periode instanceof \DateTime) {
+                    $periode = $periode->format('Y-m-d'); // Format ke string
+                }
 
                 // Tentukan label otomatis berdasarkan aturan
                 $label = 'Tidak Laris'; // Default value
-                if ($qty >= $qty_min_laris) {
+                if ($qty >= 250) {
                     $label = 'Laris';
                 }
 
                 // Data untuk disimpan ke database
                 $data = [
-                    'nama_barang' => $nama_barang,  // Nama Barang
-                    'qty' => $qty,                  // Qty
-                    'value' => $value,                  // Qty
-                    'gross' => $gross,              // Gross
-                    'disc' => $disc,                  // Qty
-                    'subtotal' => $subtotal,                  // Qty
-                    'cons' => $cons,                  // Qty
-                    'netto' => $netto,                  // Qty
-                    'label' => $label               // Label yang sudah ditentukan
+                    'nama_barang' => $nama_barang,
+                    'qty' => $qty,
+                    'value' => $value,
+                    'gross' => $gross,
+                    'disc' => $disc,
+                    'subtotal' => $subtotal,
+                    'cons' => $cons,
+                    'netto' => $netto,
+                    'periode' => $periode,  // Sudah dikonversi ke string
+                    'label' => $label
                 ];
 
                 // Simpan data ke database
@@ -174,6 +178,7 @@ class DataSetController extends CI_Controller
 
         $reader->close();
     }
+
 
 
 

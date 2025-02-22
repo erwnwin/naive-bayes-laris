@@ -173,6 +173,18 @@
                                          </ul>
                                      </div>
 
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+                                             <li>
+                                                 <strong>Mean Periode (Laris):</strong> <?php echo number_format($stats['mean_periode_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Periode (Laris):</strong> <?php echo number_format($stats['stddev_periode_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
                                  </div>
                              </div>
                          </div>
@@ -201,17 +213,99 @@
                                      </p>
                                      <div class="alert custom-alert-danger alert-dismissible">
                                          <ul>
+
+                                             <li>
+                                                 <strong>Mean Qty (Tidak Laris):</strong> <?php echo number_format($stats['mean_qty_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Qty (Tidak Laris):</strong> <?php echo number_format($stats['stddev_qty_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+
+                                             <li>
+                                                 <strong>Mean Value (Tidak Laris):</strong> <?php echo number_format($stats['mean_value_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Value (Tidak Laris):</strong> <?php echo number_format($stats['stddev_value_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
                                              <li>
                                                  <strong>Mean Gross (Tidak Laris):</strong> <?php echo number_format($stats['mean_gross_tidak_laris'], 2); ?>
                                              </li>
                                              <li>
                                                  <strong>Standar Deviasi Gross (Tidak Laris):</strong> <?php echo number_format($stats['stddev_gross_tidak_laris'], 2); ?>
                                              </li>
+
+                                         </ul>
+                                     </div>
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+
                                              <li>
-                                                 <strong>Mean Qty (Tidak Laris):</strong> <?php echo number_format($stats['mean_qty_tidak_laris'], 2); ?>
+                                                 <strong>Mean Disc (Tidak Laris):</strong> <?php echo number_format($stats['mean_disc_tidak_laris'], 2); ?>
                                              </li>
                                              <li>
-                                                 <strong>Standar Deviasi Qty (Tidak Laris):</strong> <?php echo number_format($stats['stddev_qty_tidak_laris'], 2); ?>
+                                                 <strong>Standar Deviasi Disc (Tidak Laris):</strong> <?php echo number_format($stats['stddev_disc_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+                                             <li>
+                                                 <strong>Mean SubTotal (Tidak Laris):</strong> <?php echo number_format($stats['mean_subtotal_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi SubTotal (Tidak Laris):</strong> <?php echo number_format($stats['stddev_subtotal_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+                                             <li>
+                                                 <strong>Mean Cons (Tidak Laris):</strong> <?php echo number_format($stats['mean_cons_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Cons (Tidak Laris):</strong> <?php echo number_format($stats['stddev_cons_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+                                             <li>
+                                                 <strong>Mean Netto (Tidak Laris):</strong> <?php echo number_format($stats['mean_netto_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Netto (Tidak Laris):</strong> <?php echo number_format($stats['stddev_netto_tidak_laris'], 2); ?>
+                                             </li>
+                                         </ul>
+                                     </div>
+
+
+                                     <div class="alert custom-alert-danger alert-dismissible">
+                                         <ul>
+                                             <li>
+                                                 <strong>Mean Periode (Tidak Laris):</strong> <?php echo number_format($stats['mean_periode_tidak_laris'], 2); ?>
+                                             </li>
+                                             <li>
+                                                 <strong>Standar Deviasi Periode (Tidak Laris):</strong> <?php echo number_format($stats['stddev_periode_tidak_laris'], 2); ?>
                                              </li>
                                          </ul>
                                      </div>
@@ -303,85 +397,47 @@
                                  <div class="card-header">
                                      <h3 class="card-title">Hasil Prediksi menggunakan Perhitungan Naive Bayes</span></h3>
                                      <div class="card-tools">
+
                                          <a href="<?= base_url('perhitungan/export') ?>" class="btn btn-sm btn-primaryku text-white pull-right" target="_blank">Export PDF</a>
                                      </div>
                                  </div>
-                                 <div class="card-body p-0">
-                                     <!-- <h2>Rekomendasi Kuantitas</h2>
-                                     <table border="1" cellpadding="10" cellspacing="0">
-                                         <thead>
-                                             <tr>
-                                                 <th>Nama Barang</th>
-                                                 <th>Rekomendasi Qty</th>
-                                             </tr>
-                                         </thead>
-                                         <tbody>
-                                             <?php foreach ($recommended_qty as $recommendation): ?>
-                                                 <tr>
-                                                     <td><?php echo $recommendation['nama_barang']; ?></td>
-                                                     <td><?php echo $recommendation['recommended_qty']; ?></td>
-                                                 </tr>
-                                             <?php endforeach; ?>
-                                         </tbody>
-                                     </table> -->
 
+                                 <div class="card-body p-0">
+                                     <div class="container ">
+                                         <div class="form-group mt-2 ml-2 mr-2">
+                                             <label for="filterPeriode">Filter Berdasarkan Periode:</label>
+                                             <select id="filterPeriode" class="form-control">
+                                                 <option value="">Pilih Periode</option>
+                                                 <?php foreach ($periodes as $periode): ?>
+                                                     <option value="<?= $periode['periode'] ?>"><?= $periode['periode'] ?></option>
+                                                 <?php endforeach; ?>
+                                             </select>
+                                         </div>
+                                     </div>
 
                                      <div class="table-responsive">
                                          <table class="table table-bordered">
                                              <thead>
                                                  <tr>
                                                      <th>Nama Barang</th>
-                                                     <!-- <th>Gross</th> -->
                                                      <th>Qty</th>
                                                      <th>P(Laris | X)</th>
                                                      <th>P(Tidak Laris | X)</th>
                                                      <th>Prediksi</th>
-                                                     <th>Aksi</th>
                                                  </tr>
                                              </thead>
-                                             <tbody>
+                                             <tbody id="tableBody">
                                                  <?php foreach ($predictions as $prediction): ?>
                                                      <tr>
-                                                         <td><?php echo $prediction['nama']; ?></td>
-                                                         <!-- <td><?php echo $prediction['gross']; ?></td> -->
-                                                         <td><?php echo $prediction['qty']; ?></td>
-                                                         <td><?php echo number_format($prediction['prob_laris_given_x'], 8); ?></td>
-                                                         <td><?php echo number_format($prediction['prob_tidak_laris_given_x'], 8); ?></td>
+                                                         <td><?= $prediction['nama'] ?></td>
+                                                         <td><?= $prediction['qty'] ?></td>
+                                                         <td><?= number_format($prediction['prob_laris_given_x'], 8) ?></td>
+                                                         <td><?= number_format($prediction['prob_tidak_laris_given_x'], 8) ?></td>
                                                          <td>
                                                              <?php if ($prediction['prediksi'] == 'Laris'): ?>
                                                                  <span class="badge bg-success">Laris</span>
                                                              <?php else: ?>
                                                                  <span class="badge bg-danger">Tidak Laris</span>
-                                                             <?php endif; ?>
-                                                         </td>
-                                                         <td>
-                                                             <?php if ($prediction['prediksi'] == 'Laris'): ?>
-                                                                 <!-- Button untuk menampilkan rekomendasi qty -->
-                                                                 <?php
-                                                                    // Ganti spasi dan karakter khusus dengan tanda hubung (-) untuk ID HTML
-                                                                    $namaBarangSafe = str_replace([' ', '(', ')'], '-', $prediction['nama']);
-                                                                    ?>
-                                                                 <button class="btn btn-sm btn-primaryku btn-tampilkan-rekomendasi" data-nama="<?php echo $namaBarangSafe; ?>">
-                                                                     Lihat Rekomendasi Qty
-                                                                 </button>
-                                                                 <!-- Area untuk menampilkan rekomendasi qty -->
-                                                                 <div id="rekomendasi-<?php echo $namaBarangSafe; ?>" class="mt-2" style="display:none;  color:red">
-                                                                     <strong><i class="fas fa-check"></i> Rekomendasi Qty:</strong>
-                                                                     <?php
-                                                                        // Cari rekomendasi qty berdasarkan nama barang
-                                                                        $rekomendasi = array_filter($recommended_qty, function ($item) use ($prediction) {
-                                                                            return $item['nama_barang'] == $prediction['nama'];
-                                                                        });
-                                                                        if (!empty($rekomendasi)) {
-                                                                            echo array_values($rekomendasi)[0]['recommended_qty'];
-                                                                        } else {
-                                                                            echo "Tidak ada rekomendasi";
-                                                                        }
-                                                                        ?>
-                                                                 </div>
-                                                                 <?php elseif ($prediction['prediksi'] == 'Tidak Laris'): { ?>
-                                                                     <span><i class="fas fa-times"></i> Sorry brand ini <u>TIDAK LARIS</u></span>
-                                                                 <?php } ?>
                                                              <?php endif; ?>
                                                          </td>
                                                      </tr>

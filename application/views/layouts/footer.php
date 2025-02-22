@@ -164,6 +164,51 @@
     });
 </script>
 
+<script>
+    $(document).ready(function() {
+        // Event ketika filter periode berubah
+        $('#filterPeriode').change(function() {
+            var periode = $(this).val(); // Ambil nilai periode yang dipilih
+
+            // Kirim permintaan AJAX ke server
+            $.ajax({
+                url: '<?= base_url('perhitungan/filterByPeriode') ?>', // URL endpoint
+                type: 'POST',
+                data: {
+                    periode: periode
+                }, // Data yang dikirim
+                dataType: 'json',
+                success: function(response) {
+                    // Kosongkan tabel sebelum mengisi data baru
+                    $('#tableBody').empty();
+
+                    // Isi tabel dengan data baru
+                    if (response.length > 0) {
+                        $.each(response, function(index, prediction) {
+                            var row = '<tr>' +
+                                '<td>' + prediction.nama + '</td>' +
+                                '<td>' + prediction.qty + '</td>' +
+                                '<td>' + parseFloat(prediction.prob_laris_given_x).toFixed(8) + '</td>' +
+                                '<td>' + parseFloat(prediction.prob_tidak_laris_given_x).toFixed(8) + '</td>' +
+                                '<td>' +
+                                (prediction.prediksi == 'Laris' ?
+                                    '<span class="badge bg-success">Laris</span>' :
+                                    '<span class="badge bg-danger">Tidak Laris</span>') +
+                                '</td>' +
+                                '</tr>';
+                            $('#tableBody').append(row);
+                        });
+                    } else {
+                        $('#tableBody').append('<tr><td colspan="5" class="text-center">Tidak ada data untuk periode ini.</td></tr>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Terjadi kesalahan: ' + error);
+                }
+            });
+        });
+    });
+</script>
 
 
 </body>

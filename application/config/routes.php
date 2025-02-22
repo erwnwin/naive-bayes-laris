@@ -89,5 +89,6 @@ $route['data-set/delete-data'] = 'admin/DataSetController/delete_data';
 
 $route['naivebayes/predict_by_range'] = 'admin/PerhitunganController/predict_by_range';
 $route['perhitungan/detail/(:any)'] = 'admin/PerhitunganController/detail/$1';
+$route['perhitungan/filterByPeriode'] = 'admin/PerhitunganController/filterByPeriode';
 
 // $route['data-set'] = 'admin/DataSetController';
